@@ -1,34 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// use rafc for creating a functional component
+
+import UserCard from "./components/UserCard"
 import './App.css'
+import logo from './assets/logo.jpg'
+import prithviraj from './assets/prithviraj.jpg'
+import maharana from './assets/maharana.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    // whenever creating the component we need to wrap it in a  single div, not multiple divs
+    // we can pass the props to the component by using the name of the prop and the value
+    // And in HTML we are calling props as attributes
+  <div className="container">
+
+    <UserCard name="Eshwar K" desc="des1" image={logo} style={{"border-radius":"10px"}}/>
+    <UserCard name="Prithviraj" desc="des2" image={prithviraj} style={{"border-radius":"10px"}}/>
+    <UserCard name="Maharana" desc="des3" image={maharana} style={{"border-radius":"10px"}}/>
+  </div>
   )
 }
 
